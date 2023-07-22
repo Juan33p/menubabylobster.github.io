@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú de Mi Bar</title>
+  <style>
+    /* Estilos para la fuente Font Stylus BT */
+    @font-face {
+      font-family: 'Font Stylus BT';
+      src: url('fonts/font-stylus-bt.ttf') format('truetype'); /* Ruta a la fuente en la carpeta 'fonts' */
+    }
+
+    /* Estilos para la ventana de bienvenida y el botón */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: 9999;
+      font-family: 'Font Stylus BT', Arial, sans-serif; /* Usa la fuente Font Stylus BT si está disponible, de lo contrario, usa Arial o sans-serif como respaldo */
+    }
+
+    .modal-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #333; /* Fondo de color negro */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      color: #fff; /* Texto en color blanco */
+      border-radius: 10px; /* Contorno redondeado */
+      max-width: 90%; /* Reducir el ancho del mensaje */
+      border: 1px solid #fff; /* Contorno de 1px de color blanco */
+    }
+
+    .message {
+      font-size: 16px; /* Reducir el tamaño del texto */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .close {
+      display: block;
+      margin: 0 auto;
+      padding: 10px 20px;
+      background-color: #333; /* Botón de color negro */
+      color: #fff; /* Texto en color blanco */
+      border: 1px solid #fff; /* Contorno de 1px de color blanco */
+      border-radius: 5px; /* Contorno redondeado */
+      cursor: pointer;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2; /* Cambiar el color de fondo a gris claro */
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilos para el contenedor que permitirá el desplazamiento */
+    .container {
+      max-height: 100vh;
+      overflow-y: scroll;
+    }
+  </style>
+</head>
+<body>
+  <!-- Modal de bienvenida -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <div class="message">
+        <p>¡Bienvenido a Baby Lobster!</p>
+        <p>El servicio de bebida es "un trago" por persona.</p>
+        <p>Deberás mostrar tu pulsera para solicitarlo.</p>
+      </div>
+      <button class="close" onclick="closeModal()">Aceptar</button>
+    </div>
+  </div>
+
+  <!-- Script para mostrar el modal al cargar el sitio -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    });
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "none";
+    }
+  </script>
+
+  <!-- Resto del contenido del sitio web -->
+  <div class="container">
+    <!-- Imagen 1 -->
+    <img src="imagen/imagen1.svg" alt="Bebidas del Menú">
+
+    <!-- Imagen 2 -->
+    <img src="imagen/imagen2.svg" alt="Instrucciones de los Tragos">
+  </div>
+
+</body>
+</html>
